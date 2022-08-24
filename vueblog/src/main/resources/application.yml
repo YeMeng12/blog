@@ -1,0 +1,50 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vueblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 111111
+    redis:
+      host: localhost
+      port: 6379
+      pcmassword:
+      jedis:
+        pool:
+          max-idle: 8
+          min-idle: 0
+          max-active: 8
+          max-wait: -1ms
+      database: 0
+      servlet:
+        multipart:
+          enabled: false
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+server:
+  port: 8080
+  max-http-header-size: 8192
+
+
+fandi:
+  jwt:
+    #加密秘钥
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    # token有效时长，7天，单位秒
+    expire: 604800
+    header: Authorization
+# 上传模式
+upload:
+  mode: oss
+  local:
+    url:
+    path:
+  oss:
+    file:
+      url:
+      bucketName:
+      endpoint:
+      keyId:
+      keySecret:
+
